@@ -46,7 +46,7 @@ public class Benutzer {
    */
   @Override
   public boolean equals(Object benutzer) {
-    return (benutzer instanceof Benutzer && benutzer != null //dadurch abgedeckt
+    return (benutzer instanceof Benutzer
       && this.userId.equals(((Benutzer) benutzer).userId)
       && String.copyValueOf(this.passWort).equals(String.copyValueOf(((Benutzer) benutzer).passWort)));
   }

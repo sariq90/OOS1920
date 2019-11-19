@@ -28,7 +28,7 @@ public class BenutzerVerwaltungAdmin implements BenutzerVerwaltung {
   public void benutzerEintragen(Benutzer benutzer) throws BenutzerBereitsInListeException {
     if (benutzerOk(benutzer)) {
       throw new BenutzerBereitsInListeException("Dieser Benutzer ist bereits in der Liste.");
-    } else if (benutzer instanceof Benutzer) {
+    } else if (benutzer != null) {
       benutzerListe.add(benutzer);
     }
   }
@@ -49,9 +49,9 @@ public class BenutzerVerwaltungAdmin implements BenutzerVerwaltung {
    * @throws BenutzerNichtInListeException wenn der Benutzer nicht in der Liste auftaucht.
    */
   public void benutzerLöschen(Benutzer benutzer) throws BenutzerNichtInListeException {
-    if (!benutzerOk(benutzer) && !(benutzer instanceof Benutzer)) {
+    if (!benutzerOk(benutzer)) {
       throw new BenutzerNichtInListeException("Dieser Benutzer ist nicht in der Liste.");
-    } else if (benutzer instanceof Benutzer) {
+    } else if (benutzer != null) {
       benutzerListe.remove(benutzer);
     }
   }
