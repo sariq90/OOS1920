@@ -1,9 +1,11 @@
+import java.io.*;
 import java.util.ArrayList;
 
 /**
  * <p>Struktur von BenutzerVerwaltungAdmin</p>
  * <p>Diese Klasse implementiert das Interface BenutzerVerwaltung und seine Methoden benutzerEintragen sowie
- * benutzerOk, mit denen ein neuer Benutzer angelegt und seine Validität überprüft werden kann.</p>
+ * benutzerOk, mit denen ein neuer Benutzer angelegt und seine Validität überprüft werden kann. Die persistente
+ * Speicherung findet im der Datei "Benutzerverwaltung" im root-Verzeichnis statt.</p>
  */
 public class BenutzerVerwaltungAdmin implements BenutzerVerwaltung {
 
@@ -30,6 +32,7 @@ public class BenutzerVerwaltungAdmin implements BenutzerVerwaltung {
       throw new BenutzerBereitsInListeException("Dieser Benutzer ist bereits in der Liste.");
     } else if (benutzer != null) {
       benutzerListe.add(benutzer);
+      dbSerialisieren();
     }
   }
 
@@ -40,6 +43,7 @@ public class BenutzerVerwaltungAdmin implements BenutzerVerwaltung {
    */
   @Override
   public boolean benutzerOk(Benutzer benutzer) {
+    dbDeserialisieren();
     return benutzerListe.contains(benutzer);
   }
 
@@ -53,16 +57,55 @@ public class BenutzerVerwaltungAdmin implements BenutzerVerwaltung {
       throw new BenutzerNichtInListeException("Dieser Benutzer ist nicht in der Liste.");
     } else if (benutzer != null) {
       benutzerListe.remove(benutzer);
+      dbSerialisieren();
     }
   }
 
-  public String toString() {
-    String s = "< ";
-    for (Benutzer benutzer : benutzerListe) {
-      s += benutzer.toString() + " ";
-    }
-    return s+">";
+  /**
+   * dbInitialisieren-Methode:
+   * Serialisiert eine neue leere benutzerListe.
+   */
+  public void dbInitialisieren() {
+    benutzerListe = new ArrayList<Benutzer>();
+    dbSerialisieren();
   }
+
+  /**
+   * Serialisiert die modifizierte benutzerListe unter "Benutzerverwaltung".
+   */
+  private void dbSerialisieren() {
+    try {
+      ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(new File("Benutzerverwaltung")));
+      os.writeObject(benutzerListe);
+      os.close();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
+  /**
+   * Deserialisiert die benutzerListe aus der Datei "Benutzerverwaltung" zur Modifizierung.
+   */
+  private void dbDeserialisieren() {
+    try {
+      ObjectInputStream is = new ObjectInputStream(new FileInputStream(new File("Benutzerverwaltung")));
+      benutzerListe = (ArrayList<Benutzer>) is.readObject();
+      is.close();
+    } catch (IOException e) {
+      e.printStackTrace();
+    } catch (ClassNotFoundException e) {
+      e.printStackTrace();
+    }
+  }
+
+//  public String toString() {
+//    String s = "< ";
+//    for (Benutzer benutzer : benutzerListe) {
+//      s += benutzer.toString() + " ";
+//    }
+//    return s+">";
+//  }
+
 }
 
 // Exception für Benutzer-Duplikate in Listen
