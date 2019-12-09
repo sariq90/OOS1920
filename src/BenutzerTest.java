@@ -24,14 +24,12 @@ class BenutzerTest {
     char[] testPassWort = "TestPassWort".toCharArray();
     Benutzer testBenutzer1 = new Benutzer(testUserId,testPassWort);
     Benutzer testBenutzer2 = new Benutzer();
-    assertEquals(testUserId,testBenutzer1.getUserId());
-    assertEquals(testPassWort,testBenutzer1.getPassWort());
+    assertNotEquals(testBenutzer1,testBenutzer2);
     testUserId = "andereTestUserId";
     testPassWort = "anderesTestPassWort".toCharArray();
     testBenutzer1.setUserId(testUserId);
     testBenutzer1.setPassWort(testPassWort);
-    assertEquals(testUserId,testBenutzer1.getUserId());
-    assertEquals(testPassWort,testBenutzer1.getPassWort());
+    assertNotEquals(testBenutzer1,testBenutzer2);
     assertEquals(testBenutzer2.getUserId(),"default");
     assertArrayEquals(testBenutzer2.getPassWort(),"default".toCharArray());
   }

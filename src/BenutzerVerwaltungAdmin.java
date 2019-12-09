@@ -15,10 +15,16 @@ public class BenutzerVerwaltungAdmin implements BenutzerVerwaltung {
   private ArrayList<Benutzer> benutzerListe;
 
   /**
+   * Attribut zur Speicherung des Dateinamen:
+   */
+  private String filename;
+
+  /**
    * Default-Konstruktor:
    */
   public BenutzerVerwaltungAdmin () {
     benutzerListe = new ArrayList<Benutzer>();
+    filename = "Benutzerverwaltung";
   }
 
   /**
@@ -75,7 +81,7 @@ public class BenutzerVerwaltungAdmin implements BenutzerVerwaltung {
    */
   private void dbSerialisieren() {
     try {
-      ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(new File("Benutzerverwaltung")));
+      ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(new File(filename)));
       os.writeObject(benutzerListe);
       os.close();
     } catch (IOException e) {
@@ -88,7 +94,7 @@ public class BenutzerVerwaltungAdmin implements BenutzerVerwaltung {
    */
   private void dbDeserialisieren() {
     try {
-      ObjectInputStream is = new ObjectInputStream(new FileInputStream(new File("Benutzerverwaltung")));
+      ObjectInputStream is = new ObjectInputStream(new FileInputStream(new File(filename)));
       benutzerListe = (ArrayList<Benutzer>) is.readObject();
       is.close();
     } catch (IOException e) {
