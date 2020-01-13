@@ -1,4 +1,4 @@
-import prak4client.BenutzerVerwaltungAdmin;
+import benutzer.BenutzerVerwaltungAdmin;
 
 public class Main {
   public static void main(String[] args) {

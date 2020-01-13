@@ -4,7 +4,7 @@ import javafx.event.*;
 import javafx.stage.Stage;
 
 /**
- * LoginController gibt ein Fenster zum Login mit Benutzername und -passwort aus.
+ * lokal.LoginController gibt ein Fenster zum Login mit Benutzername und -passwort aus.
  */
 public class LoginController {
 

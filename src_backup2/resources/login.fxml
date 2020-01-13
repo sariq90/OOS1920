@@ -55,15 +55,5 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="labelRemoteAnmeldung" layoutX="235.0" layoutY="176.0" prefHeight="20.0" prefWidth="61.0" text="Remote?" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="235.0" AnchorPane.rightAnchor="74.0" AnchorPane.topAnchor="176.0">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <CheckBox id="checkboxRemoteAnmeldung" fx:id="checkboxRemoteAnmeldung" layoutX="325.0" layoutY="176.0" mnemonicParsing="false" onAction="#onCheckboxRemoteAnmeldungClick">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </CheckBox>
    </children>
 </AnchorPane>

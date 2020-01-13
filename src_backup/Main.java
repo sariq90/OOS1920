@@ -1,4 +1,4 @@
-import prak4client.BenutzerVerwaltungAdmin;
+
 
 public class Main {
   public static void main(String[] args) {
@@ -9,20 +9,20 @@ public class Main {
 
 
 //
-//    benutzer.BenutzerVerwaltungAdmin v = new benutzer.BenutzerVerwaltungAdmin();
+//    BenutzerVerwaltungAdmin v = new BenutzerVerwaltungAdmin();
 //
-//    prak4gemklassen.Benutzer b1 = new prak4gemklassen.Benutzer("Heinz","OOSistSuper".toCharArray());
-//    prak4gemklassen.Benutzer b2 = new prak4gemklassen.Benutzer("Michi","booleistcool".toCharArray());
-//    prak4gemklassen.Benutzer b3 = new prak4gemklassen.Benutzer("Georg","matheisttoll".toCharArray());
-//    prak4gemklassen.Benutzer b4 = new prak4gemklassen.Benutzer();
-//    prak4gemklassen.Benutzer b5 = new prak4gemklassen.Benutzer();
-//    prak4gemklassen.Benutzer b6 = null;
+//    Benutzer b1 = new Benutzer("Heinz","OOSistSuper".toCharArray());
+//    Benutzer b2 = new Benutzer("Michi","booleistcool".toCharArray());
+//    Benutzer b3 = new Benutzer("Georg","matheisttoll".toCharArray());
+//    Benutzer b4 = new Benutzer();
+//    Benutzer b5 = new Benutzer();
+//    Benutzer b6 = null;
 //
 //    try {
 //      v.benutzerEintragen(b1);
 //      v.benutzerEintragen(b2);
 //      v.benutzerEintragen(b3);
-//    } catch (prak4gemklassen.BenutzerBereitsInListeException e) {
+//    } catch (BenutzerBereitsInListeException e) {
 //      e.printStackTrace();
 //    }
 //
@@ -30,7 +30,7 @@ public class Main {
 //    try {
 //      v.benutzerEintragen(b4);
 //      v.benutzerEintragen(b5);
-//    } catch (prak4gemklassen.BenutzerBereitsInListeException e) {
+//    } catch (BenutzerBereitsInListeException e) {
 //      e.printStackTrace();
 //    }
 //
@@ -38,7 +38,7 @@ public class Main {
 //    try {
 //      v.benutzerLöschen(b2);
 //      v.benutzerLöschen(b2);
-//    } catch (benutzer.BenutzerNichtInListeException e) {
+//    } catch (BenutzerNichtInListeException e) {
 //      e.printStackTrace();
 //    }
 //
@@ -46,9 +46,9 @@ public class Main {
 //    try {
 //      v.benutzerEintragen(b6);
 //      v.benutzerLöschen(b6);
-//    } catch (prak4gemklassen.BenutzerBereitsInListeException e) {
+//    } catch (BenutzerBereitsInListeException e) {
 //      e.printStackTrace();
-//    } catch (benutzer.BenutzerNichtInListeException e) {
+//    } catch (BenutzerNichtInListeException e) {
 //      e.printStackTrace();
 //    }
 //

@@ -1,3 +1,5 @@
+package prak4client;
+
 import javafx.fxml.*;
 import javafx.scene.control.*;
 import javafx.event.*;
@@ -10,10 +12,18 @@ public class AnwendungsController {
 
   @FXML
   Label labelAnwendung;
-
   @FXML
   Button buttonCancel;
 
+  Client clientRef;
+
+  /**
+   * Setter-Methode für die MainApplication-Referenz.
+   * @param client nimmt die Referenz der MainApplication an.
+   */
+  public void setMainApp(Client client) {
+    clientRef = client;
+  }
   /**
    * Schließt das Fenster Anwendung, sobald der Abbrechen-Button gedrückt wird.
    */

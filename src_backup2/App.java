@@ -14,7 +14,7 @@ public class App extends Application {
   public void start(Stage primaryStage) {
     Parent root;
     try {
-      root = FXMLLoader.load(getClass().getResource("resources/anmeldung.fxml"));
+      root = FXMLLoader.load(getClass().getResource("anmeldung.fxml"));
       primaryStage.setTitle("Benutzerverwaltung");
       primaryStage.setScene(new Scene(root));
       primaryStage.show();

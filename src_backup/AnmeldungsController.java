@@ -4,7 +4,7 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 /**
- * AnmeldungsController gibt ein Fenster zum Registrieren mit Benutzername, Passwort und -wiederholung aus.
+ * lokal.AnmeldungsController gibt ein Fenster zum Registrieren mit Benutzername, Passwort und -wiederholung aus.
  */
 public class AnmeldungsController {
 
